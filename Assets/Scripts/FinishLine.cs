@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishLine : MonoBehaviour
 {
@@ -7,7 +8,13 @@ public class FinishLine : MonoBehaviour
         int layerIndex = LayerMask.NameToLayer("Player");
         if (collision.gameObject.layer == layerIndex)
         {
-            print("Finished");
+            Invoke("ReloadScene", 1f);
         }
+    }
+
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(0);
+
     }
 }

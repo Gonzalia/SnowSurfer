@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CrashDetector : MonoBehaviour
 {
@@ -7,7 +8,13 @@ public class CrashDetector : MonoBehaviour
         int layerIndex = LayerMask.NameToLayer("Floor");
         if (collision.gameObject.layer == layerIndex)
         {
-            print("Crashed!");
+            Invoke("ReloadScene", 1f);
         }
+    }
+
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(0);
+
     }
 }
