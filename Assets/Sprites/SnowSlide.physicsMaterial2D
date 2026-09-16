@@ -8,5 +8,5 @@ PhysicsMaterial2D:
   m_PrefabAsset: {fileID: 0}
   m_Name: SnowSlide
   serializedVersion: 2
-  friction: 0.02
+  friction: 0.008
   bounciness: 0
